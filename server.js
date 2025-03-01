@@ -2,11 +2,13 @@ const express = require("express");
 const mongoose = require("mongoose");
 const User = require("./models/User");  
 const bcryptjs = require("bcryptjs");
+const cors=require('cors')
 
 const app = express();
 const PORT = 3000;
 
 app.use(express.json());
+app.use(cors())
 
 mongoose.connect("mongodb+srv://venkatesh:database24@database123.8zv1u.mongodb.net/backend?retryWrites=true&w=majority&appName=database123")
 .then(() => {
